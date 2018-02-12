@@ -28,7 +28,7 @@ class TodoScreen extends Component {
 
     static navigationOptions = ({ navigation }) => ({
 
-        title: `home screen`,
+        title: `Todo screen`,
         headerTintColor: '#FFFFFF',
         headerStyle: {
             backgroundColor: '#03A9F4'
@@ -49,14 +49,14 @@ class TodoScreen extends Component {
 
         return <TouchableOpacity
             style={{
-                height: 50,
+                height: 80,
                 borderWidth: 1,
                 marginBottom: 2,
-                flexDirection:'column'
+                flexDirection: 'column'
             }}
-        >   
+        >
             <Text style={{ textAlign: 'center' }}>{item.title}</Text>
-            <Text style={{textAlign : 'center', color : doneColor}}>{done}</Text>
+            <Text style={{ textAlign: 'center', color: doneColor }}>{done}</Text>
         </TouchableOpacity>
     }
     render() {
@@ -64,14 +64,18 @@ class TodoScreen extends Component {
 
         return (
             <View>
-                <FlatList
-                    style={{ flexGrow: 0 }}
-                    data={this.state.data}
-                    keyExtractor={item => item.title}
-                    renderItem={({ item, index }) =>
-                        this.ifCompleted(item)
-                    }
-                />
+                <View>
+                    <FlatList
+                        data={this.state.data}
+                        keyExtractor={item => item.title}
+                        renderItem={({ item, index }) =>
+                            this.ifCompleted(item)
+                        }
+                    />
+                </View>
+                <View style={{backgroundColor : 'red', height : 200}}>
+                    
+                </View>
 
             </View>
         )
