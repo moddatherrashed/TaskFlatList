@@ -58,7 +58,7 @@ class PhotosScreen extends Component {
                         maxHeight: 304,
                         backgroundColor: '#CCC',
                     }} >
-                        <TouchableOpacity onPress={() => navigate('PhotoItem', { url: item.url })}>
+                        <TouchableOpacity onPress={() => navigate('PhotoItem', { url: item.url,  id : item.id })}>
                             <Image style={{ width: '100%', height: '100%' }} source={{ uri: item.thumbnailUrl }} />
                         </TouchableOpacity>
                     </View>

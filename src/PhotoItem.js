@@ -9,9 +9,14 @@ class PhotoItem extends Component {
 
         }
     }
+    static navigationOptions = ({ navigation }) => ({
 
-    static NavigationOptions = ({
-        header: null
+        title: `id : ${navigation.state.params.id}`,
+        headerTintColor: '#FFFFFF',
+        headerStyle: {
+            backgroundColor: '#03A9F4'
+        },
+
     })
     render() {
         const { params } = this.props.navigation.state
