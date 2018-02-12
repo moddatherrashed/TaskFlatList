@@ -26,7 +26,15 @@ class PhotosScreen extends Component {
         const json = await response.json()
         this.setState({ data: json })
     }
+    static navigationOptions = ({ navigation }) => ({
 
+        title: `photos screen`,
+        headerTintColor: '#FFFFFF',
+        headerStyle: {
+            backgroundColor: '#03A9F4'
+        },
+
+    })
 
     render() {
         const { navigate } = this.props.navigation
@@ -50,7 +58,7 @@ class PhotosScreen extends Component {
                         maxHeight: 304,
                         backgroundColor: '#CCC',
                     }} >
-                        <TouchableOpacity onPress={() => navigate('PhotoItem',{url : item.url})}>
+                        <TouchableOpacity onPress={() => navigate('PhotoItem', { url: item.url })}>
                             <Image style={{ width: '100%', height: '100%' }} source={{ uri: item.thumbnailUrl }} />
                         </TouchableOpacity>
                     </View>

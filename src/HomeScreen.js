@@ -26,6 +26,15 @@ class HomeScreen extends Component {
         this.setState({ data: json })
     }
 
+    static navigationOptions = ({ navigation }) => ({
+
+        title: `home screen`,
+        headerTintColor: '#FFFFFF',
+        headerStyle: {
+            backgroundColor: '#03A9F4'
+        },
+
+    })
     render() {
         const { navigate } = this.props.navigation
         return (
@@ -44,7 +53,7 @@ class HomeScreen extends Component {
                                 marginBottom: 2
                             }}
                             onPress={() => navigate('DetailsScreen',{body : item.body, title: item.title , id : item.id })}>
-                            <Text>{item.title}</Text>
+                            <Text style={{textAlign : 'center'}}>{item.title}</Text>
                         </TouchableOpacity>
                     }
                 />
