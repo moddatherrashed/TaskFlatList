@@ -20,6 +20,7 @@ class DetailsScreen extends Component {
                 <Image
                     style={{ height: '100%', width: '100%' }}
                     source={{ uri: params.image }}
+                    resizeMode="contain"
                 />
                 {console.log(params.image)}
             </View>
