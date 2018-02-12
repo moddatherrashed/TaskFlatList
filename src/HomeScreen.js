@@ -17,7 +17,7 @@ class HomeScreen extends Component {
 
 
     fetchData = async () => {
-        const response = await fetch('https://rallycoding.herokuapp.com/api/music_albums')
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts')
             .catch(function (error) {
                 alert('There has been a problem with your fetch operation: ' + error.message);
                 throw error;
@@ -31,6 +31,7 @@ class HomeScreen extends Component {
         return (
             <View>
                 <FlatList
+                style = {{flexGrow : 0}}
                     data={this.state.data}
                     keyExtractor={item => item.title}
                     renderItem={({ item, index }) =>
@@ -42,7 +43,7 @@ class HomeScreen extends Component {
                                 borderWidth: 1,
                                 marginBottom: 2
                             }}
-                            onPress={() => navigate('DetailsScreen',{image : item.image})}>
+                            onPress={() => navigate('DetailsScreen',{body : item.body, title: item.title , id : item.id })}>
                             <Text>{item.title}</Text>
                         </TouchableOpacity>
                     }

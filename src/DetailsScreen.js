@@ -10,19 +10,21 @@ class DetailsScreen extends Component {
         }
     }
 
-    static NavigationOptions = ({
-        header: null
+    static navigationOptions = ({ navigation }) => ({
+
+        title: `id : ${navigation.state.params.id}`,
+        headerTintColor: '#FFFFFF',
+        headerStyle: {
+            backgroundColor: '#03A9F4'
+        },
+
     })
     render() {
         const { params } = this.props.navigation.state
         return (
-            <View style={{flex : 1}}>
-                <Image
-                    style={{ height: '100%', width: '100%' }}
-                    source={{ uri: params.image }}
-                    resizeMode="contain"
-                />
-                {console.log(params.image)}
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <Text style={{ textAlign: 'center', marginBottom: 20 }}>title : {params.title}</Text>
+                <Text style={{ textAlign: 'center', backgroundColor: '#FFFFFF', padding: 5 }}>body : {params.body}</Text>
             </View>
         )
     }
