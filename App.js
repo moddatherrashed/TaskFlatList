@@ -4,6 +4,7 @@ import HomeScreen from './src/HomeScreen'
 import PhotosScreen from './src/PhotosScreen'
 import TodoScreen from './src/TodoScreen'
 import DetailsScreen from  './src/DetailsScreen'
+
 const App = StackNavigator({
 
   Profile: {
