@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { View, Text, FlatList, TouchableOpacity } from 'react-native'
+import { Input, Button } from './reuse_components'
 
 class TodoScreen extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            data: []
+            data: [],
+            textFeild: ''
         }
     }
 
@@ -64,6 +66,24 @@ class TodoScreen extends Component {
 
         return (
             <View>
+                <View style={{ flexDirection: 'row' }}>
+                    <Input
+                        placeholder='Add todo here !'
+                        value={this.state.textFeild}
+                        onChangeText={textFeild => this.setState({ textFeild })} />
+                </View>
+                <Button text="Add" onPress={() => {
+                    let data = [{
+                        "userId": 500,
+                        "id": 500,
+                        "title": this.state.textFeild,
+                        "completed": false
+                    }, ...this.state.data]
+                    this.setState({
+                        data
+                    })
+
+                }} />
                 <View>
                     <FlatList
                         data={this.state.data}
@@ -73,8 +93,8 @@ class TodoScreen extends Component {
                         }
                     />
                 </View>
-                <View style={{backgroundColor : 'red', height : 200}}>
-                    
+                <View style={{ backgroundColor: 'red', height: 200 }}>
+
                 </View>
 
             </View>
