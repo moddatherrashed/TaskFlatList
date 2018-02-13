@@ -40,7 +40,7 @@ class HomeScreen extends Component {
         return (
             <View>
                 <FlatList
-                style = {{flexGrow : 0}}
+                    style={{ flexGrow: 0 }}
                     data={this.state.data}
                     keyExtractor={item => item.title}
                     renderItem={({ item, index }) =>
@@ -50,10 +50,14 @@ class HomeScreen extends Component {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                                 borderWidth: 1,
-                                marginBottom: 2
+                                borderColor : '#03A9F4',
+                                marginBottom: 2,
+                                marginLeft : 2 ,
+                                marginRight : 2,
+                                marginTop : 2 
                             }}
-                            onPress={() => navigate('DetailsScreen',{body : item.body, title: item.title , id : item.id })}>
-                            <Text style={{textAlign : 'center'}}>{item.title}</Text>
+                            onPress={() => navigate('DetailsScreen', { body: item.body, title: item.title, id: item.id })}>
+                            <Text style={{ textAlign: 'center' }}>{item.title}</Text>
                         </TouchableOpacity>
                     }
                 />

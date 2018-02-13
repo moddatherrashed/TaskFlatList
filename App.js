@@ -26,7 +26,7 @@ const App = StackNavigator({
             height: 20
           },
           style: {
-            backgroundColor: '#323232'
+            backgroundColor: '#03A9F4'
           }
         }
       })

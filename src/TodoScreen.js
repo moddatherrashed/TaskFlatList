@@ -54,7 +54,9 @@ class TodoScreen extends Component {
                 height: 80,
                 borderWidth: 1,
                 marginBottom: 2,
-                flexDirection: 'column'
+                flexDirection: 'column',
+                borderColor: '#03A9F4',
+                borderWidth: 2
             }}
         >
             <Text style={{ textAlign: 'center' }}>{item.title}</Text>
@@ -93,10 +95,6 @@ class TodoScreen extends Component {
                         }
                     />
                 </View>
-                <View style={{ backgroundColor: 'red', height: 200 }}>
-
-                </View>
-
             </View>
         )
     }
