@@ -88,6 +88,7 @@ class TodoScreen extends Component {
                 }} />
                 <View>
                     <FlatList
+                        style={{ flexGrow: 0 }}
                         data={this.state.data}
                         keyExtractor={item => item.title}
                         renderItem={({ item, index }) =>
